@@ -1,3 +1,12 @@
+#i {
+  top: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+}
+.navbar-fixed-top {
+  margin-top: 50px;
+}
 .input-group {
   width: 100%;
 }
@@ -13,5 +22,5 @@ webview {
   bottom: 58px;
   left: 0;
   right: 0;
-  top: 58px;
+  top: 108px;
 }

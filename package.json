@@ -19,5 +19,8 @@
   "devDependencies": {
     "electron-packager": "^7.3.0",
     "electron-prebuilt": "^1.2.8"
+  },
+  "dependencies": {
+    "yo-yo": "^1.2.2"
   }
 }
