@@ -1,0 +1,23 @@
+{
+  "name": "shift",
+  "version": "1.0.0",
+  "description": "A web browser written in Electron.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/molarmanful/shift.git"
+  },
+  "author": "Benjamin Pang <benjinpang@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/molarmanful/shift/issues"
+  },
+  "homepage": "https://github.com/molarmanful/shift#readme",
+  "devDependencies": {
+    "electron-packager": "^7.3.0",
+    "electron-prebuilt": "^1.2.8"
+  }
+}

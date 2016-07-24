@@ -1,2 +1,6 @@
 # shift
-A web browser written in Electron.
+A personal web browser written in Electron. Uses a text-command rather than a keyboard-command format.
+
+##Todo
+- Tabs
+- Adblock

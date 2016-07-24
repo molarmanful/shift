@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf8">
+    <title>Shift Browser</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header"><a id="t" class="navbar-brand"></a></div>
+        <ul class="nav navbar-nav">
+          <li><a id="u"></a></li>
+        </ul>
+      </div>
+    </nav>
+    <nav class="navbar navbar-default navbar-fixed-bottom">
+      <div class="container-fluid">
+        <form class="navbar-form">
+          <div class="input-group">
+            <input id="s" type="text" placeholder="Command..." class="form-control">
+          </div>
+        </form>
+      </div>
+    </nav>
+    <webview src="new.html" node-integration autosize="on" plugins></webview>
+    <script src="renderer.js"></script>
+  </body>
+</html>

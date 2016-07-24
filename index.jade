@@ -1,0 +1,23 @@
+//output:index.html
+doctype html
+html
+  head
+    meta(charset='utf8')
+    title Shift Browser
+    link(rel='stylesheet' href='bootstrap.css')
+    link(rel='stylesheet' href='index.css')
+  body
+    nav.navbar.navbar-default.navbar-fixed-top
+      .container-fluid
+        .navbar-header
+          a.navbar-brand#t
+        ul.nav.navbar-nav
+          li
+            a#u
+    nav.navbar.navbar-default.navbar-fixed-bottom
+      .container-fluid
+        form.navbar-form
+          .input-group
+            input.form-control#s(type='text' placeholder='Command...')
+    webview(src='new.html' node-integration autosize='on' plugins)
+    script(src='renderer.js')
