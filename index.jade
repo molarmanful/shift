@@ -7,9 +7,12 @@ html
     link(rel='stylesheet' href='bootstrap.css')
     link(rel='stylesheet' href='index.css')
   body
+    //tabs
     ul.nav.nav-tabs#i
       li
         a New Tab - Shift
+    
+    //page title/url
     nav.navbar.navbar-default.navbar-fixed-top
       .container-fluid
         .navbar-header
@@ -17,10 +20,15 @@ html
         ul.nav.navbar-nav
           li
             a#u
+    
+    //command input
     nav.navbar.navbar-default.navbar-fixed-bottom
       .container-fluid
         form.navbar-form
           .input-group
             input.form-control#s(type='text' placeholder='Command...')
+    
+    //webview
     webview(src='new.html' autosize='on' nodeintegration plugins)
+    
     script(src='renderer.js')
