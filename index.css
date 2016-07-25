@@ -3,6 +3,7 @@
   left: 0;
   right: 0;
   position: fixed;
+  height: 50px;
 }
 .navbar-fixed-top {
   margin-top: 50px;

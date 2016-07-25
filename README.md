@@ -30,6 +30,7 @@ Renderer Process:
 
 - `index.jade` - Holds the browser UI and the webviews.
 - `bootstrap.css` - Bootstrap-based theming for `index.jade`.
+- `dvsm.css` - Contains DejaVu Sans Mono, which is used by default as the command input font.
 - `index.styl` - Further styling for `index.jade`.
 - `renderer.js` - Handles text commands, tabs, and page navigation.
 
