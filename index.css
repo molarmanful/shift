@@ -8,6 +8,19 @@
 .navbar-fixed-top {
   margin-top: 50px;
 }
+.navbar-fixed-top #u,
+.navbar-fixed-top #t {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 45vw;
+}
+.nav-tabs li a {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 95vw;
+}
 .input-group {
   width: 100%;
 }

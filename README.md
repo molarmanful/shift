@@ -40,3 +40,4 @@ Webview:
 
 ##Todo
 - Adblock
+- History?
