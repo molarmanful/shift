@@ -38,6 +38,7 @@ onload=_=>{
     document.body.appendChild(x)
     //add new tab
     i.innerHTML+=`<li><a>${v.getTitle()}</a></li>`
+    //divide/truncate tabs evenly
     Array.from(document.querySelectorAll('#i li a')).map(x=>x.style.maxWidth=(0|100/document.querySelectorAll('#i li a').length-5)+'vw')
   }
 
