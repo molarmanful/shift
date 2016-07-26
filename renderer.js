@@ -56,64 +56,70 @@ onload=_=>{
     if(e.which==13){
       e.preventDefault();
 
-      //multiple commands can be separated by ;
+      //this is for recursion
       (f=s=>{
-        S=s[0]
-        //devtools
-        if(S.match(/^d */))
-          v.openDevTools();
-        //go back
-        else if(S.match(/^< */))
-          v.goBack();
-        //go forward
-        else if(S.match(/^> */))
-          v.goForward();
-        //reload/stop
-        else if(S.match(/^r */))
-          v.isLoading()?v.stop():v.reload();
-        //load http-prefixed page
-        else if(x=S.match(/^h +(.+)/))
-          v.src='http://'+x[1];
-        //load any page (no auto-prefixing)
-        else if(x=S.match(/^H +(.+)/))
-          v.src=x[1];
-        //find in page
-        else if(x=S.match(/^f(c?) +(.+)/))
-          v.findInPage(x[2],{matchCase:!!x[1]});
-        //print
-        else if(S.match(/^p */))
-          v.print();
-        //search - you can change this to engine of your choice
-        else if(x=S.match(/^s +(.+)/))
-          v.loadURL('https://google.com/search?q='+encodeURIComponent(x[1]));
-        //new tab
-        else if(S.match(/^n */))
-          nV(),
-          v=V()[C=V().length-1],
-          v.addEventListener('did-finish-load',uT);
-        //left tab
-        else if(x=S.match(/^\[ */))
-          v=V()[C?--C:C],
-          uT();
-        //right tab
-        else if(x=S.match(/^] */))
-          v=V()[C<V().length-1?++C:C],
-          uT();
-        //close tab
-        else if((x=S.match(/^x */))&&V().length>1)
-          document.body.removeChild(v),
-          i.removeChild(document.querySelector('li.active')),
-          v=V()[C?--C:C],
-          uT();
-        //page url
-        else if(S.match(/u/))
-          alert(v.getURL());
+        //this is to make sure that the command is executed before moving on
+        new Promise(_=>{
+          S=s[0]||''
+          //devtools
+          if(S.match(/^d */))
+            v.openDevTools();
+          //go back
+          else if(S.match(/^< */))
+            v.goBack();
+          //go forward
+          else if(S.match(/^> */))
+            v.goForward();
+          //reload/stop
+          else if(S.match(/^r */))
+            v.isLoading()?v.stop():v.reload();
+          //load http-prefixed page
+          else if(x=S.match(/^h +(.+)/))
+            v.src='http://'+x[1];
+          //load any page (no auto-prefixing)
+          else if(x=S.match(/^H +(.+)/))
+            v.src=x[1];
+          //find in page
+          else if(x=S.match(/^f(c?) +(.+)/))
+            v.findInPage(x[2],{matchCase:!!x[1]});
+          //print
+          else if(S.match(/^p */))
+            v.print();
+          //search - you can change this to engine of your choice
+          else if(x=S.match(/^s +(.+)/))
+            v.loadURL('https://google.com/search?q='+encodeURIComponent(x[1]));
+          //new tab
+          else if(S.match(/^n */))
+            nV(),
+            v=V()[C=V().length-1],
+            v.addEventListener('did-finish-load',uT);
+          //left tab
+          else if(x=S.match(/^\[ */))
+            v=V()[C?--C:C],
+            uT();
+          //right tab
+          else if(x=S.match(/^] */))
+            v=V()[C<V().length-1?++C:C],
+            uT();
+          //close tab
+          else if((x=S.match(/^x */))&&V().length>1)
+            document.body.removeChild(v),
+            i.removeChild(document.querySelector('li.active')),
+            v=V()[C?--C:C],
+            uT();
+          //page url
+          else if(S.match(/^u */))
+            alert(v.getURL());
+          _()
+        })
         //go onto next command if there is one
-        v.addEventListener('dom-ready',_=>{
+        .then(_=>{
           s.shift()
           s.length&&f(s)
         })
-      })(s.value.split(/; */g))
+
+      //multiple commands can be separated by ;
+      })(s.value.split(/; */))
 
       //reset command input value
       s.value=''
